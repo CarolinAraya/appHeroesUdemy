@@ -1,6 +1,10 @@
 body{
   margin-bottom: 50px;
 }
+/* Images */
+.img-logo {
+  width: 150px; 
+}
 /* Animaciones */
 .animated {
   -webkit-animation-duration: 1s;
