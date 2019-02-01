@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroesService, Heroe } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  heroe: Heroe;
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
-  ngOnInit() {
+  buscarHeroe(termino: string) {
+    console.log(this.heroesService.searchHeroes(termino));
   }
 
 }
