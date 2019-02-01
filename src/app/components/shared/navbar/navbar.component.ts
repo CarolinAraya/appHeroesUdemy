@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  heroe: Heroe;
+  heroe: any = {}
 
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService, private router: Router) { }
 
   buscarHeroe(termino: string) {
-    console.log(this.heroesService.searchHeroes(termino));
-  }
+    const heroe = this.heroesService.searchHeroes(termino);
+    //console.log(heroe.nombre);
+    //let nameHeroe = heroe.nombre;
+    this.router.navigate(['/buscador',termino]);
 
+  }
 }

@@ -69,11 +69,11 @@ export class HeroesService {
     let heroesArr: Heroe[] = [];
 
     if (termino) {
-    termino = termino.toLocaleLowerCase();
+      termino = termino.toLocaleLowerCase();
       for (let heroe of this.heroes) {
         let nombre = heroe.nombre.toLocaleLowerCase();
         if (nombre.indexOf(termino) >= 0) {
-          heroesArr.push(heroe)
+          heroesArr.push(heroe);
         }
       }
     }
