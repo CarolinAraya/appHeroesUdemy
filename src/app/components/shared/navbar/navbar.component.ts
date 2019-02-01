@@ -12,10 +12,11 @@ export class NavbarComponent {
   constructor(private heroesService: HeroesService, private router: Router) { }
 
   buscarHeroe(termino: string) {
-    const heroe = this.heroesService.searchHeroes(termino);
+    //const heroe = this.heroesService.searchHeroes(termino);
     //console.log(heroe.nombre);
     //let nameHeroe = heroe.nombre;
-    this.router.navigate(['/buscador',termino]);
-
+    if ( termino ) {
+      this.router.navigate(['/buscador',termino]);
+    }
   }
 }

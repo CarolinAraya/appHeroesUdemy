@@ -7,12 +7,14 @@ import { HeroesService } from '../../../services/heroes.service';
   templateUrl: './searcher.component.html'
 })
 export class SearcherComponent implements OnInit {
-  heroe: any = {};
+  heroes: any[] = [];
+  termino: string;
 
   constructor(private activatedRoute: ActivatedRoute, private heroesService: HeroesService) {
     this.activatedRoute.params.subscribe(params => {
-      this.heroe = this.heroesService.searchHeroes(params['termino']);
-      //console.log(this.heroe)
+      this.termino = params['termino'];
+      this.heroes = this.heroesService.searchHeroes(params['termino']);
+      //console.log(this.heroes)
     })
   }
 
